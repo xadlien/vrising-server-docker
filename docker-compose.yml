@@ -1,0 +1,13 @@
+version: '3'
+services:
+  vrising-server:
+    image: vrising:latest
+    network_mode: bridge
+    ports:
+      - "27015:27015/udp"
+      - "27016:27016/udp"
+    volumes:
+      - "./save-data:/vrising/save-data"
+      - "./GameSettingsPresets:/vrising/VRisingServer_Data/StreamingAssets/GameSettingsPresets"
+      - "./Settings:/vrising/VRisingServer_Data/StreamingAssets/Settings"
+      - "./logs:/vrising/logs"
